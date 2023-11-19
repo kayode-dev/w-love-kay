@@ -1,3 +1,5 @@
+import gsap from "gsap";
+import { useEffect, useLayoutEffect } from "react";
 import Navbar from "../components/navbar";
 
 const Friends = () => {
@@ -16,6 +18,20 @@ const Friends = () => {
     "Omodi",
     "Lenis",
   ];
+  useLayoutEffect(() => {
+    const tl = gsap.timeline();
+    tl.fromTo(
+      ".friends",
+      { scale: 0.1, opacity: 0 },
+      {
+        duration: 1,
+        scale: 1,
+        opacity: 1,
+        ease: "expoScale(0, 1, power2.inOut)",
+        stagger: 1,
+      }
+    );
+  }, []);
   return (
     <div>
       <Navbar />
@@ -24,7 +40,7 @@ const Friends = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center justify-center gap-x-5 gap-y-5 text-center">
           {friends.map((friend) => {
             return (
-              <div className="h-12 w-auto rounded-md border flex items-center justify-center cursor-pointer bg-white text-black hover:text-white hover:bg-transparent duration-300 ">
+              <div className="friends h-12 w-auto rounded-md border flex items-center justify-center cursor-pointer bg-white text-black hover:text-white hover:bg-transparent duration-300 ">
                 {friend}
               </div>
             );
