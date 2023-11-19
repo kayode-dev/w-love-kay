@@ -1,6 +1,7 @@
 import Navbar from "../components/navbar";
 import Button from "../components/button";
 import { TypeAnimation } from "react-type-animation";
+import { Link } from "react-router-dom";
 const Home = () => {
   const message = [
     "Hi, Kayode here… to address the elephant in the room, you might be wondering why this link made it to your respective DM’s",
@@ -32,7 +33,9 @@ const Home = () => {
           />
         </div>
         <div className="flex gap-4">
-          <Button name="Friends" />
+          <Link to="/friends">
+            <Button name="Friends" />
+          </Link>
           <Button name="Family" />
         </div>
       </div>

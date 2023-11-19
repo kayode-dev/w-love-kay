@@ -2,6 +2,7 @@ import "./App.css";
 import Start from "./views/start";
 import Home from "./views/home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Friends from "./views/friends";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route index path="/" element={<Start />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/friends" element={<Friends />} />
         </Routes>
       </main>
     </BrowserRouter>
