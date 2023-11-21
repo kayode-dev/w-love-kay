@@ -1,6 +1,7 @@
 import gsap from "gsap";
-import { useEffect, useLayoutEffect } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import Navbar from "../components/navbar";
+import Specific from "./specific";
 
 const Friends = () => {
   const friends = [
@@ -18,6 +19,21 @@ const Friends = () => {
     "Omodi",
     "Lenis",
   ];
+
+  const [clicked, setClicked] = useState();
+  const [specificDisplay, setSpecificDisplay] = useState("hidden");
+
+  const personClickHandler = (e) => {
+    console.log(e.target.value);
+    setClicked(e.target.value);
+    console.log(clicked);
+    setSpecificDisplay("block");
+  };
+
+  const closeSpecificHandler = () => {
+    setSpecificDisplay("hidden");
+  };
+
   useLayoutEffect(() => {
     const tl = gsap.timeline();
     tl.fromTo(
@@ -33,20 +49,26 @@ const Friends = () => {
     );
   }, []);
   return (
-    <div>
+    <div className="relative">
+      {" "}
       <Navbar />
       <div className="p-10 flex flex-col gap-10">
         <p className="text-3xl font-bold">Friends</p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center justify-center gap-x-5 gap-y-5 text-center">
           {friends.map((friend) => {
             return (
-              <div className="friends h-12 w-auto rounded-md border flex items-center justify-center cursor-pointer bg-white text-black hover:text-white hover:bg-transparent duration-300 ">
+              <button
+                className="friends h-12 w-auto rounded-md border flex items-center justify-center cursor-pointer bg-transparent text-white hover:text-black hover:bg-white duration-300 "
+                onClick={personClickHandler}
+                value={friend}
+              >
                 {friend}
-              </div>
+              </button>
             );
           })}{" "}
         </div>
       </div>
+      <Specific name={clicked} display={specificDisplay} setClose={closeSpecificHandler}/>
     </div>
   );
 };
