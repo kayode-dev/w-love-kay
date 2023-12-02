@@ -32,12 +32,12 @@ const Specific = ({ person, display, setClose }) => {
         {!passwordIsValid ? (
           <section className="flex flex-col gap-4 items-center">
             <p className="font-light">Enter your passcode:</p>
-            <form onSubmit={passwordSubmitHandler} className="flex gap-4">
+            <form onSubmit={passwordSubmitHandler} className="flex gap-4 w-full justify-center items-center">
               {" "}
               <input
                 type="password"
                 placeholder="Enter your code"
-                className="h-12 bg-neutral-950 text-center rounded shadow-md text-xl font-bold"
+                className="h-12 bg-neutral-950 w-full md:w-min text-center rounded shadow-md text-xl font-bold"
                 ref={personPasscode}
               />
               <button className="border border-white p-2 flex items-center justify-center rounded hover:bg-white hover:text-black duration-300">
