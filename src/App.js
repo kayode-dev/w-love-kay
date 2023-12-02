@@ -7,7 +7,7 @@ import Friends from "./views/friends";
 function App() {
   return (
     <BrowserRouter>
-      <main className=" min-h-screen bg-neutral-900 text-white">
+      <main className=" min-h-screen bg-neutral-950 text-white">
         {/* <Navbar />
         <div className=" flex flex-col items-center justify-center">
           <Home />
