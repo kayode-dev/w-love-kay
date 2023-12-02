@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "../components/button";
 import { useRef, useState } from "react";
 
@@ -32,7 +33,10 @@ const Specific = ({ person, display, setClose }) => {
         {!passwordIsValid ? (
           <section className="flex flex-col gap-4 items-center">
             <p className="font-light">Enter your passcode:</p>
-            <form onSubmit={passwordSubmitHandler} className="flex gap-4 w-full justify-center items-center">
+            <form
+              onSubmit={passwordSubmitHandler}
+              className="flex gap-4 w-full justify-center items-center"
+            >
               {" "}
               <input
                 type="password"
@@ -50,9 +54,11 @@ const Specific = ({ person, display, setClose }) => {
             <section className="bg-neutral-950 p-4 rounded-md drop-shadow-lg leading-loose">
               {writeUp}
             </section>
-            <button className="bg-white text-black font-medium p-2 rounded-md w-max">
-              Done ?
-            </button>
+            <Link to="/done">
+              <button className="bg-white text-black font-medium p-2 rounded-md w-max">
+                Done ?
+              </button>
+            </Link>
           </div>
         )}
       </div>

@@ -3,7 +3,6 @@ const getAll = async () => {
     "https://people-32cc5-default-rtdb.firebaseio.com/people.json"
   );
   const data = await res.json();
-  console.log(data);
 
   const loadedData = [];
 
@@ -19,13 +18,4 @@ const getAll = async () => {
 
   return loadedData;
 };
-
-// for (const key in data) {
-//   loadedData.push({
-//     id: key,
-//     title: data[key].title,
-//     openingText: data[key].openingText,
-//     releaseDate: data[key].releaseDate,
-//   });
-// }
 export default getAll;

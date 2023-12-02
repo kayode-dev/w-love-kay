@@ -1,5 +1,5 @@
 import gsap from "gsap";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import {useLayoutEffect, useState } from "react";
 import Navbar from "../components/navbar";
 import Specific from "./specific";
 import getAll from "../functions/getAll";
@@ -63,20 +63,7 @@ const Friends = () => {
     };
     fetchData();
   }, []);
-  // useLayoutEffect(() => {
-  //   const tl = gsap.timeline();
-  //   tl.fromTo(
-  //     ".friends",
-  //     { scale: 0.1, opacity: 0 },
-  //     {
-  //       duration: 1,
-  //       scale: 1,
-  //       opacity: 1,
-  //       ease: "expoScale(0, 1, power2.inOut)",
-  //       stagger: 1,
-  //     }
-  //   );
-  // }, []);
+ 
 
   return (
     <div>
