@@ -46,7 +46,7 @@ const Specific = ({ person, display, setClose }) => {
             </form>
           </section>
         ) : (
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-8 items-center justify-center">
             <section className="bg-neutral-950 p-4 rounded-md drop-shadow-lg leading-loose">
               {writeUp}
             </section>
