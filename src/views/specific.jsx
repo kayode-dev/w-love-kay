@@ -43,8 +43,8 @@ const Specific = ({ person, display, setClose }) => {
             </form>
           </section>
         ) : (
-          <div className="flex flex-col items-center justify-center gap-5">
-            <section className="overflow-y-scroll max-h-[320px] bg-neutral-950 p-4 rounded-md drop-shadow-lg leading-loose">
+          <div className="flex flex-col items-center justify-center gap-5 max-h-[80%]">
+            <section className="overflow-y-scroll bg-neutral-950 p-4 rounded-md drop-shadow-lg leading-loose">
               {writeUp}
             </section>
             <Button name="Done?" />
