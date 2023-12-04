@@ -34,9 +34,8 @@ const Home = () => {
         </div>
         <div className="flex gap-4">
           <Link to="/friends">
-            <Button name="Friends" />
+            <Button name="Let's have it!" />
           </Link>
-          <Button name="Family" />
         </div>
       </div>
     </>

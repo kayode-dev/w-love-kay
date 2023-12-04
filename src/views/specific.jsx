@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Button from "../components/button";
+
 import { useRef, useState } from "react";
 
 const Specific = ({ person, display, setClose }) => {
@@ -11,6 +11,8 @@ const Specific = ({ person, display, setClose }) => {
     if (personPasscode.current.value === person.password) {
       setPasswordIsvalid(true);
       setWriteUp(<p>{person.writeUp}</p>);
+    } else {
+      alert("Incorrect Password");
     }
   };
   const closeModalHandler = () => {

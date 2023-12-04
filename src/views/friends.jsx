@@ -6,32 +6,13 @@ import getAll from "../functions/getAll";
 
 const Friends = () => {
   const [friendsList, setFriendsList] = useState([]);
-  // const friends = [
-  //   { id: 1, name: "Feyikemi", category: "friend", password: "fey1kem108" },
-  //   { id: 2, name: "Samuel", category: "friend", password: "frvky1" },
-  //   {
-  //     id: 3,
-  //     name: "Damilola Orensile",
-  //     category: "friend",
-  //     password: "damimyne",
-  //   },
-  //   { id: 4, name: "Ikenna", category: "friend", password: "obinna" },
-  //   { id: 5, name: "Precious", category: "friend", password: "kiaharvetz" },
-  //   {
-  //     id: 6,
-  //     name: "Precious(sasageyo)",
-  //     category: "friend",
-  //     password: "leviarkerman",
-  //   },
-  //   { id: 7, name: "Ayomide", category: "friend", password: "kashymendy" },
-  //   { id: 8, name: "Jetron", category: "friend", password: "fey1kem108" },
+
   //   { id: 9, name: "Mayomikun", category: "friend", password: "mayo" },
   //   { id: 10, name: "Amy", category: "friend", password: "iyawooga001" },
-  //   { id: 11, name: "Nicolas", category: "friend", password: "cupidnickey" },
-  //   { id: 12, name: "Omodi", category: "friend", password: "modibodyody" },
   //   { id: 13, name: "Lenis", category: "friend", password: "Lenis" },
   //   { id: 14, name: "Valerie", category: "friend", password: "valerie" },
-  // ];
+  // karin, nene?
+
 
   const [person, setPerson] = useState({});
   const [specificDisplay, setSpecificDisplay] = useState("hidden");
