@@ -1,5 +1,5 @@
 const Done = () => {
-    return ( <></> );
+    return <>U+02191</>;
 }
  
 export default Done;
