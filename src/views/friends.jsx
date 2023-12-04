@@ -51,7 +51,7 @@ const Friends = () => {
       {" "}
       <Navbar />
       <div className="p-10 flex flex-col gap-10">
-        <p className="text-3xl font-bold">Friends</p>
+        <p className="text-3xl font-bold">Find yourself 👩🏻‍🤝‍🧑🏽</p>
         {friendsList.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center justify-center gap-x-5 gap-y-5 text-center">
             {friendsList.map((friend) => {
