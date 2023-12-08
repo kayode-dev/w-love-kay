@@ -3,13 +3,12 @@ import {useLayoutEffect, useState } from "react";
 import Navbar from "../components/navbar";
 import Specific from "./specific";
 import getAll from "../functions/getAll";
+import { Link } from "react-router-dom";
 
 const Friends = () => {
   const [friendsList, setFriendsList] = useState([]);
 
   //   { id: 9, name: "Mayomikun", category: "friend", password: "mayo" },
-  //   { id: 10, name: "Amy", category: "friend", password: "iyawooga001" },
-  //   { id: 13, name: "Lenis", category: "friend", password: "Lenis" },
   //   { id: 14, name: "Valerie", category: "friend", password: "valerie" },
   // karin, nene?
 
@@ -29,6 +28,7 @@ const Friends = () => {
     const fetchData = async () => {
       const data = await getAll();
       setFriendsList(data);
+      
       const tl = gsap.timeline();
       tl.fromTo(
         ".friends",
@@ -51,21 +51,24 @@ const Friends = () => {
       {" "}
       <Navbar />
       <div className="p-10 flex flex-col gap-10">
-        <p className="text-3xl font-bold">Find yourself 👩🏻‍🤝‍🧑🏽</p>
+        <p className="text-2xl md:text-3xl font-bold">Find yourself 👫🏾</p>
         {friendsList.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center justify-center gap-x-5 gap-y-5 text-center">
-            {friendsList.map((friend) => {
-              return (
-                <div
-                  className="friends h-12 w-auto rounded-md border flex items-center justify-center cursor-pointer bg-transparent text-white hover:text-black hover:bg-white duration-300 "
-                  onClick={() => {
-                    personClickHandler(friend);
-                  }}
-                >
-                  {friend.name}
-                </div>
-              );
-            })}
+          <div className="flex flex-col gap-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center gap-x-5 gap-y-5 text-center">
+              {friendsList.map((friend) => {
+                return (
+                  <div
+                    className="friends h-12 w-auto rounded-md border flex items-center justify-center cursor-pointer bg-transparent text-white hover:text-black hover:bg-white duration-300 "
+                    onClick={() => {
+                      personClickHandler(friend);
+                    }}
+                  >
+                    {friend.name}
+                  </div>
+                );
+              })}
+            </div>
+            <Link className="self-center" to="/done">Not here?</Link>
           </div>
         ) : (
           <p>Loading...</p>

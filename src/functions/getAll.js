@@ -1,7 +1,6 @@
+
 const getAll = async () => {
-  const res = await fetch(
-    "https://people-32cc5-default-rtdb.firebaseio.com/people.json"
-  );
+  const res = await fetch(process.env.REACT_APP_API_W_LOVE);
   const data = await res.json();
 
   const loadedData = [];
