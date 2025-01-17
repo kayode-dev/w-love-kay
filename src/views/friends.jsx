@@ -31,6 +31,7 @@ const Friends = () => {
     };
     fetchData();
   }, []);
+  
 useEffect(()=>{
   const tl = gsap.timeline();
       tl.fromTo(
@@ -43,7 +44,7 @@ useEffect(()=>{
           ease: "expoScale(0, 1, power2.inOut)",
           stagger: 1,
         }
-      );},[friendList]) 
+      );},[friendsList]) 
 
   return (
     <div>
