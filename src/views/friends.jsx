@@ -1,5 +1,5 @@
 import gsap from "gsap";
-import {useLayoutEffect, useState } from "react";
+import {useLayoutEffect, useState, useEffect } from "react";
 import Navbar from "../components/navbar";
 import Specific from "./specific";
 import getAll from "../functions/getAll";
@@ -28,8 +28,11 @@ const Friends = () => {
     const fetchData = async () => {
       const data = await getAll();
       setFriendsList(data);
-      
-      const tl = gsap.timeline();
+    };
+    fetchData();
+  }, []);
+useEffect(()=>{
+  const tl = gsap.timeline();
       tl.fromTo(
         ".friends",
         { scale: 0.1, opacity: 0 },
@@ -40,11 +43,7 @@ const Friends = () => {
           ease: "expoScale(0, 1, power2.inOut)",
           stagger: 1,
         }
-      );
-    };
-    fetchData();
-  }, []);
- 
+      );},[friendList]) 
 
   return (
     <div>
